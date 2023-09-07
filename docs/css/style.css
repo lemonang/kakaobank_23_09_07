@@ -1,0 +1,863 @@
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html>body {
+	font-family: 'GmarketSansMedium';
+	text-underline-position: under;
+}
+
+/* 라이브러리 */
+
+.con-min-width {
+	min-width: var(--site-width);
+}
+
+.con {
+	width: var(--site-width);
+}
+
+/* 커스텀 */
+:root {
+	--site-width: 1080px;
+}
+
+/* 공통 버튼 효과 */
+
+.btn-box a {	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-box a:hover > span {
+	text-decoration: underline;
+}
+/* 공통 버튼 우측 > */
+.btn-box a::after {
+	content: ">";
+	margin-left: 8px;
+}
+/* header 시작------------------------------------------------- */
+
+/* 1차 메뉴 아이템 */
+
+header {
+	position: fixed;
+	top: 0;
+	z-index: 5;
+	width: 100%;
+	background-color: #fff;
+}
+
+
+.top-bar__menu-box-1>ul>li>a {
+	height: 100%;
+	padding: 0 40px;
+	align-items: center;
+	display: flex;
+	position: relative;
+}
+
+
+/* 1차 메뉴 밑줄 애니메이션 */
+.top-bar__menu-box-1>ul>li>a::after {
+	content: "";
+	background-color: black;
+	position: absolute;
+
+	height: 2px;
+	width: 0;
+	bottom: -1px;
+	left: 50%;
+	transform: translatex(-50%);
+
+	transition: width .3s;
+}
+
+.top-bar__menu-box-1>ul>li:hover>a::after {
+	width: 70%;
+}
+
+
+/* n차 메뉴 아이템 hover 밑줄 */
+.top-bar__menu-box-1 ul>li:hover>a {
+	text-decoration: underline;
+}
+
+/* 메가메뉴 */
+.top-bar__menu-box-1>ul>li>div {
+	display: none;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background-color: white;
+	transform: translatey(2px);
+	z-index: 2;
+}
+
+.top-bar__menu-box-1>ul>li:hover>div {
+	display: block;
+}
+
+/* n차 메뉴 아이템 텍스트 공통 속성 */
+.top-bar__menu-box-1>ul>li>div>div ul>li>a {
+	display: block;
+	text-align: center;
+}
+
+.top-bar__menu-box-1>ul>li>div>div>ul {
+	margin: 30px 0;
+}
+
+/* 2차 메뉴 아이템 텍스트 */
+.top-bar__menu-box-1>ul>li>div>div>ul>li>a {
+	padding: 20px 0;
+}
+
+/* 3차 메뉴 아이템 텍스트 */
+.top-bar__menu-box-1>ul>li>div>div>ul>li>ul>li>a {
+	font-size: 13px;
+	padding: 10px 0;
+	color: #444;
+}
+
+
+.btn-go-submit {
+	display: block;
+	align-self: center;
+	padding: 15px;
+	background-color: #fede22;
+	border-radius: 30px;
+	margin-right: 20px;
+}
+
+.globe-btn img {
+	margin-right: 22px;
+	cursor: pointer;
+	transition: opacity .3s;
+}
+
+.globe-btn:hover img {
+	opacity: 0.5;
+}
+
+/* header 끝------------------------------------------------ */
+
+
+/* 섹션 배경 이미지 시작---------------------------------------*/
+
+/* 배경 이미지 */
+.section-1>.section-con {
+	background-image: url(../images/배경이미지.png);
+	width: 1200px;
+	height: 884px;
+	top: 80px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center 0;
+	position: relative;
+}
+
+/* 좌우 노란색 배경 */
+.section-1>.background-line {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 720px;
+	background-color: #ffef6b;
+	z-index: -1;
+}
+
+/* 텍스트 박스 */
+.section-1__text-box {
+	position: absolute;
+	top: 175px;
+	left: 90px;
+}
+
+/* 구글 플레이, 앱스토어 버튼 */
+.app-store-btn-group>ul {
+	gap: 0 10px;
+}
+
+.app-store-btn-group>ul>li>a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 178px;
+	height: 56px;
+	border: 1px solid rgba(255, 255, 255, .3);
+	border-radius: 12px;
+	font-size: 16.2px;
+	font-weight: bold;
+	color: #333;
+	background: #fff;
+	gap: 0 10px;
+	padding: 3px 0 0 0;
+}
+
+.app-store-btn-group>ul>li:hover>a {
+	text-decoration: underline;
+}
+
+/* 구글, 앱스토어 버튼 속 좌측 아이콘 */
+.app-store-btn-group>ul>li>a::before {
+	content: "";
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-image: url(../images/구글플레이\ 앱스토어.png);
+	background-repeat: no-repeat;
+	background-position: -341px -292px;
+	margin-top: -4px;
+}
+
+.app-store-btn-group>ul>li:last-child>a::before {
+	background-position: -371px -292px;
+}
+
+/* 섹션 배경 이미지 끝---------------------------------------*/
+
+/* 배너박스 시작 ------------------------------------------*/
+
+/* 배너박스  레이아웃 시작 */
+.banner-box-type {
+	height: 750px;
+}
+
+.banner-box-type-between-pad {
+	background-color: #fafafa;
+	height: 32px;
+}
+
+/* banner-box-type의 높이 750px 상속 */
+.banner-box-type>.con {
+	display: flex;
+	height: 100%;
+}
+
+.banner-box-type>.con>div:first-child {
+	width: 55%;
+}
+
+.banner-box-type>.con>div:last-child {
+	width: 45%;
+}
+
+.banner-box-type>.con>div {
+	position: relative;
+}
+
+/* 배너박스  레이아웃 끝 */
+
+/* 배너박스 공통 디자인 시작 */
+.banner-box-type .btn-box>a {
+	background-color: #f6f6f6;
+	width: 258px;
+	height: 56px;
+	color: #333;
+	border-radius: 10px;
+}
+
+
+/* 배너박스 공통 디자인 끝 */
+
+
+/* 배너박스 1 구현 시작 */
+.banner-box-type-1 .img-box {
+	position: absolute;
+	left: 30px
+}
+
+.banner-box-type-1 .img-box>img {
+	width: 473px;
+}
+
+.banner-box-type-1 .cont-box {
+	position: absolute;
+	top: 220px;
+	left: 40px;
+}
+
+/* 배너박스 1 구현 끝 */
+
+/* 배너박스 2 구현 시작 */
+.banner-box-type-2 .cont-box {
+	position: absolute;
+	top: 172px;
+	left: 65px;
+}
+
+.banner-box-type-2 .btn-box>a {
+	width: 158px;
+	height: 56px;
+}
+
+.banner-box-type-2 .cont-box-img>img {
+	width: 440px;
+}
+
+/* 스크롤 제거 */
+.banner-box-type-2 {
+	overflow: hidden;
+}
+
+
+.banner-box-type-2 .img-box {
+	position: absolute;
+	top: 50px;
+	left: 75px;
+	transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s;
+	opacity: 0;
+	transform: translateX(100%);
+}
+
+.banner-box-type-2 .img-box>img {
+	width: 409px;
+	height: 722px;
+}
+
+.banner-box-type-2 .img-box.active {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+/* 배너박스 2 구현 끝 */
+
+/* 배너박스 3 구현 시작 */
+.banner-box-type-3 .img-box {
+	position: absolute;
+	top: 60px;
+	left: 60px;
+}
+
+.banner-box-type-3 .img-box>img {
+	width: 459px;
+	height: 607px;
+}
+
+.banner-box-type-3 .cont-box {
+	position: absolute;
+	top: 185px;
+	left: 30px;
+}
+
+/* 배너박스 3 구현 끝 */
+
+/* 배너박스 4 구현 시작 */
+.banner-box-type-4 .cont-box {
+	position: absolute;
+	top: 180px;
+	left: 120px;
+}
+
+.banner-box-type-4 .img-box {
+	position: absolute;
+	top: 130px;
+}
+
+.banner-box-type-4 .img-box>img {
+	width: 492px;
+	height: 408px;
+}
+
+/* 배너박스 4 구현 끝 */
+
+/* 배너박스 5 구현 시작 */
+.banner-box-type-5 {
+	background-image: url(../images/5-지도배경.png);
+	background-repeat: no-repeat;
+	background-position: -12% 50%;
+}
+
+/* 스크롤 제거 */
+.banner-box-type-5 {
+	overflow: hidden;
+}
+
+.banner-box-type-5 .img-box {
+	position: absolute;
+	top: 20px;
+	left: 60px;
+	opacity: 0;
+	transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s;
+	transform: translatey(100%);
+}
+
+.banner-box-type-5 .img-box.active {
+	opacity: 1;
+	transform: translatey(0);
+}
+
+.banner-box-type-5 .img-box>img {
+	width: 408px;
+	height: 715px;
+}
+
+.banner-box-type-5 .cont-box {
+	position: absolute;
+	top: 190px;
+	left: 60px;
+}
+
+/* 배너박스 5 구현 끝 */
+
+/* 배너박스 끝 ------------------------------------------*/
+
+
+/* 대출박스 구현 시작 -------------------------------*/
+
+/* 대출박스 하늘 구현 시작 */
+.loan-box {
+	position: relative;
+	color: white;
+	overflow: hidden;
+}
+
+.loan-box>.con {
+	z-index: 1;
+	position: relative;
+}
+
+
+.loan-box .sky>.blue {
+	background-color: #559cde;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: height .7s;
+}
+
+.loan-box.active .sky>.blue {
+	height: 0;
+}
+
+/* 대출박스 하늘 구현 끝 */
+
+/* 대출박스 달 구현 시작 */
+.loan-box .sky>.moon {
+	width: 112px;
+	height: 112px;
+	position: absolute;
+	left: calc(50% + 400px);
+	top: 257px;
+	overflow: hidden;
+}
+
+.loan-box .sky>.moon>.base {
+	width: 110px;
+	height: 110px;
+	background-color: #ffdc00;
+	border-radius: 50%;
+	transition: background-color 1s;
+}
+
+.loan-box.active .sky>.moon>.base {
+	background-color: white;
+}
+
+.loan-box .sky>.moon>.shadow {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: -100%;
+	left: -100%;
+	border-radius: 50%;
+	transition: top .5s .4s, left .5s .4s;
+}
+
+.loan-box.active .sky>.moon>.shadow {
+	top: -23px;
+	left: -23px;
+	background-color: #333b58;
+}
+
+
+/* 대출박스 달 구현 끝 */
+
+
+/* 대출박스 별 시작 */
+.loan-box.active .sky .ico_star {
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	border-radius: 4px;
+	background-color: white;
+}
+
+.loan-box.active .sky .ico_star1 {
+	top: 30%;
+	left: 10%;
+}
+
+.loan-box.active .sky .ico_star2 {
+	top: 10%;
+	left: 20%;
+}
+
+.loan-box.active .sky .ico_star3 {
+	top: 25%;
+	left: 15%;
+}
+
+.loan-box.active .sky .ico_star4 {
+	top: 40%;
+	right: 8%;
+}
+
+.loan-box.active .sky .ico_star5 {
+	top: 43%;
+	right: 30%;
+}
+
+.loan-box.active .sky .ico_star6 {
+	top: 73%;
+	right: 27%;
+}
+
+.loan-box.active .sky .ico_star8 {
+	top: 65%;
+	left: 22%;
+}
+
+@keyframes clittering {
+	0% {
+		opacity: 0;
+		transform: scale(0.5)
+	}
+
+	50% {
+		opacity: 1;
+		transform: scale(0.9)
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.5)
+	}
+}
+
+
+.loan-box.active .sky .ico_star1 {
+	animation: clittering 2s infinite
+}
+
+.loan-box.active .sky .ico_star2 {
+	animation: clittering 3s infinite
+}
+
+.loan-box.active .sky .ico_star3 {
+	animation: clittering 5s infinite
+}
+
+.loan-box.active .sky .ico_star4 {
+	animation: clittering 2s infinite
+}
+
+.loan-box.active .sky .ico_star5 {
+	animation: clittering 4s infinite
+}
+
+.loan-box.active .sky .ico_star6 {
+	animation: clittering 1.8s infinite
+}
+
+.loan-box.active .sky .ico_star8 {
+	animation: clittering 3.5s infinite
+}
+
+/* 대출박스 별 끝 */
+
+/* 대출박스 버튼 시작 */
+.loan-box .btn-box>ul>li>a {
+	width: 166px;
+	height: 52px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, .09);
+}
+
+
+/* 대출박스 버튼 끝 */
+
+/* 대출박스 이미지 구현 시작 */
+
+.loan-box .img-box-1>img {
+	display: block;
+	width: 429px;
+	height: 563px;
+	margin: 0 auto;
+	transform: translatey(4%);
+}
+
+/* 대출박스 이미지 구현 끝 */
+
+/* 대출박스 구현 끝 -------------------------------*/
+
+/* 체크박스 구현 시작 ---------------------------- */
+.checkcard-box .cont-box .btn-box>a {
+	background-color: #f6f6f6;
+	width: 258px;
+	height: 56px;
+	font-size: 16px;
+	line-height: 56px;
+	color: #333;
+	border-radius: 10px;
+}
+
+/* 슬라이더 박스 구현 시작 */
+.checkcard-box .slider-box-1 {
+	width: 720px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.checkcard-box .slider-box-1 .slick .item {
+	transition: transform .3s;
+}
+
+.checkcard-box .slider-box-1 .slick .item .img-box {
+	padding: 100px 0;
+}
+
+.checkcard-box .slider-box-1 .slick .item.slick-center {
+	transform: scale(1.2);
+}
+
+.checkcard-box .slider-box-1 .btn-arrows>.btn-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: -150px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+.checkcard-box .slider-box-1 .btn-arrows>.btn-arrow:hover {
+	opacity: 1;
+}
+
+.checkcard-box .slider-box-1 .btn-arrows>.btn-arrow:last-child {
+	left: auto;
+	right: -150px;
+}
+
+/* 슬라이더 박스 구현 끝 */
+
+/* 체크박스 구현 끝 ---------------------------*/
+
+/* IT 스킬박스 구현 시작 -------------------- */
+.itskill-box {
+	padding-bottom: 140px;
+	position: relative;
+	z-index: 0;
+}
+
+.itskill-box .divider {
+	margin-top: 50px;
+	height: 2px;
+	display: flex;
+	justify-content: center;
+}
+
+.itskill-box .divider::after {
+	content: "";
+	display: block;
+	height: 100%;
+	width: 100px;
+	background-color: black;
+}
+
+/* 하단 이미지 */
+.itskill-box .info-box>.img-box {
+	display: flex;
+	justify-content: center;
+}
+
+.itskill-box .info-box>.img-box>img {
+	width: 1020px;
+}
+
+/* 가로 막대 */
+.itskill-box .info-box::before {
+	content: "";
+	position: absolute;
+  left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #eee;
+	transform: translateY(140px);
+	z-index: -1;
+}
+
+/* 하단 텍스트 */
+.itskill-box .info-box>.cont-box-2 {
+	display: flex;
+	justify-content: center;
+}
+
+.itskill-box .info-box>.cont-box-2>ul {
+	width: 1020px;
+}
+
+.itskill-box .info-box>.cont-box-2>ul>li {
+	text-align: center;
+}
+
+.itskill-box .info-box>.cont-box-2>ul>li>h2 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 45px 0 17px;
+}
+
+.itskill-box .info-box>.cont-box-2>ul>li>.des {
+	font-size: 14px;
+	line-height: 24px;
+	color: #666;
+	font-weight: 200;
+}
+
+/* IT 스킬박스 구현 끝 ----------------------- */
+
+/* footer 구현 시작 -----------------------------------*/
+
+.bottom-bar {
+	padding-bottom: 20px;
+	font-family: '돋움', dotum, sans-serif;
+}
+
+.bottom-bar__info {
+	padding: 13px 0;
+}
+
+.bottom-bar__info>ul>li>a {
+	display: inline-block;
+	padding: 0 15.8px;
+	font-size: 11px;
+	position: relative;
+}
+
+.bottom-bar__info>ul>li:hover>a {
+	text-decoration: underline;
+}
+
+.bottom-bar__info>ul>li>a::after {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	left: calc(100% - 1px);
+	background-color: #d8d8d8;
+}
+
+.bottom-bar__info>ul>li:nth-child(9)>a::after,
+.bottom-bar__info>ul>li:last-child>a::after {
+	display: none;
+}
+
+.bottom-bar__busi-info>span {
+	display: inline-block;
+	font-size: 12px;
+	color: #888;
+	padding: 0 5px;
+}
+
+.bottom-bar__busi-info>span:first-child {
+	padding-left: 10px;
+}
+
+.bottom-bar__busi-info>span:nth-child(2) {
+	color: black;
+}
+
+.bottom-bar__copy-right {
+	font-weight: bold;
+	font-size: 11px;
+	color: #888;
+	padding: 0 5px 0 7px;
+}
+
+.bottom-bar__footer {
+	margin-top: 15px;
+}
+
+.bottom-bar__footer>a {
+	display: flex;
+	align-items: center;
+	margin: 0 10px;
+	gap: 0 10px;
+}
+
+.bottom-bar__footer>a>span {
+	display: inline-block;
+	padding: 3px 0 0 0;
+	font-size: 13px;
+	font-weight: 600;
+	color: #666;
+}
+
+.bottom-bar__footer>a:first-child>img {
+	width: 48px;
+	height: 32px;
+	filter: brightness(50%);
+}
+
+.bottom-bar__footer>a:nth-child(2)>img {
+	width: 42px;
+	height: 41px;
+	filter: brightness(70%);
+}
+
+.bottom-bar__footer>.icon-sns-list>ul {
+	margin-right: 20px;
+}
+
+.bottom-bar__footer>.icon-sns-list>ul>li {
+	padding: 0 5px;
+}
+
+.bottom-bar__footer>.icon-sns-list>ul>li:first-child {
+	margin-right: -2px;
+}
+
+.bottom-bar__footer>.icon-sns-list>ul>li:nth-child(2) {
+	margin-right: 5px;
+}
+
+.bottom-bar__footer>.icon-sns-list>ul>li>.icon {
+	display: block;
+	background-image: url(../images/sns.png);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+}
+
+.bottom-bar__footer>.icon-sns-list>ul>li>.icon-facebook {
+	background-position: 0 -90px;
+}
+
+.bottom-bar__footer>.icon-sns-list>ul>li>.icon-instagram {
+	background-position: -191px -138px;
+}
+
+.bottom-bar__footer>.icon-sns-list>ul>li>.icon-youtube {
+	background-position: -90px -90px;
+}
+
+.bottom-bar__footer>.icon-sns-list>ul>li>.icon-brunch {
+	background-position: -217px -138px;
+}
+
+.bottom-bar__footer>.icon-sns-list {
+	align-self: center;
+}
+
+/* footer 구현 끝 -----------------------------------*/
